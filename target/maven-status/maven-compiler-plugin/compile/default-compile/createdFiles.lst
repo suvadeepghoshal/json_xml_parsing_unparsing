@@ -1,0 +1,14 @@
+utilities\DbUtil.class
+models\Pair.class
+controller\GetData.class
+models\Book.class
+utilities\GetXml.class
+utilities\impl\GetXmlImpl.class
+services\impl\DetailsImpl.class
+dao\DetailsDao.class
+services\Details.class
+models\Author.class
+controller\GetXmlData.class
+utilities\impl\DbUtilImpl.class
+dao\impl\DetailsDaoImpl.class
+models\Books.class

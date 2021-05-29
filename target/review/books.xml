@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<books>
+    <book>
+        <author>
+            <author_id>"1"</author_id>
+            <author_name>"Maanavi"</author_name>
+        </author>
+        <author>
+            <author_id>"2"</author_id>
+            <author_name>"Aman"</author_name>
+        </author>
+        <author>
+            <author_id>"3"</author_id>
+            <author_name>"Tejal"</author_name>
+        </author>
+        <book_id>"123"</book_id>
+        <book_price>120</book_price>
+        <book_title>"Harry Potter"</book_title>
+    </book>
+    <book>
+        <author>
+            <author_id>"2"</author_id>
+            <author_name>"Aman"</author_name>
+        </author>
+        <author>
+            <author_id>"3"</author_id>
+            <author_name>"Tejal"</author_name>
+        </author>
+        <book_id>"124"</book_id>
+        <book_price>130</book_price>
+        <book_title>"Farewell to Arms"</book_title>
+    </book>
+    <book>
+        <author>
+            <author_id>"2"</author_id>
+            <author_name>"Aman"</author_name>
+        </author>
+        <book_id>"125"</book_id>
+        <book_price>140</book_price>
+        <book_title>"Early Indians"</book_title>
+    </book>
+</books>
