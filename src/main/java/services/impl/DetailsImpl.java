@@ -21,7 +21,9 @@ import models.Book;
 import models.Books;
 import models.Pair;
 import services.Details;
+import utilities.GetJson;
 import utilities.GetXml;
+import utilities.impl.GetJsonDataImpl;
 import utilities.impl.GetXmlImpl;
 import java.io.StringReader;
 
@@ -93,8 +95,8 @@ public class DetailsImpl implements Details {
             List<Book> bookList = books.getBooks();
             Map<String, String> authorXmlMap = new HashMap<>();
             for (int i = 0; i < bookList.size(); ++i) {
-                DetailsDao detailsDao = new DetailsDaoImpl();
-                detailsDao.createBooks(bookList.get(i));
+                // DetailsDao detailsDao = new DetailsDaoImpl();
+                // detailsDao.createBooks(bookList.get(i));
             }
             for (int i = 0; i < bookList.size(); ++i) {
                 for (int j = 0; j < bookList.get(i).getAuthors().size(); ++j) {
@@ -105,18 +107,20 @@ public class DetailsImpl implements Details {
                 }
             }
             for (Map.Entry<String, String> entry : authorXmlMap.entrySet()) {
-                DetailsDao detailsDao = new DetailsDaoImpl();
-                detailsDao.createAuthors(entry.getKey(), entry.getValue());
+                // DetailsDao detailsDao = new DetailsDaoImpl();
+                // detailsDao.createAuthors(entry.getKey(), entry.getValue());
             }
             for (int i = 0; i < bookList.size(); ++i) {
                 for (int j = 0; j < bookList.get(i).getAuthors().size(); ++j) {
                     Pair<String, String> pair = new Pair<>();
                     pair.setFirst(bookList.get(i).getAuthors().get(j).getId());
                     pair.setSecond(bookList.get(i).getBookId());
-                    DetailsDao detailsDao = new DetailsDaoImpl();
-                    detailsDao.mapping(pair);
+                    // DetailsDao detailsDao = new DetailsDaoImpl();
+                    // detailsDao.mapping(pair);
                 }
             }
+            GetJson getJson = new GetJsonDataImpl();
+            getJson.displayJsonData(bookList);
         } catch (JAXBException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

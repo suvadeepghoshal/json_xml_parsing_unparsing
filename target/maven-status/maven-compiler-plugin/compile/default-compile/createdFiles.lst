@@ -1,5 +1,6 @@
 utilities\DbUtil.class
 models\Pair.class
+utilities\GetJson.class
 controller\GetData.class
 models\Book.class
 utilities\GetXml.class
@@ -12,3 +13,4 @@ controller\GetXmlData.class
 utilities\impl\DbUtilImpl.class
 dao\impl\DetailsDaoImpl.class
 models\Books.class
+utilities\impl\GetJsonDataImpl.class
