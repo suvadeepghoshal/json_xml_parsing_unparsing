@@ -2,13 +2,8 @@ package dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
 
 import dao.DetailsDao;
-import models.Author;
 import models.Book;
 import models.Pair;
 import utilities.DbUtil;

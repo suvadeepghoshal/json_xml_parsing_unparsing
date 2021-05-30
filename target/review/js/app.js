@@ -3,7 +3,7 @@ function app() {
     type: "GET",
     url: "books.json",
     dataType: "json",
-    success: function (data) {
+    success: function (data) { // xhr_response
         $("#get_data").append(JSON.stringify(data));
       sendToservlet(data);
     },

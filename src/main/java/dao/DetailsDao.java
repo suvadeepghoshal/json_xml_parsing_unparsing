@@ -1,8 +1,4 @@
 package dao;
-
-import java.util.List;
-
-import models.Author;
 import models.Book;
 import models.Pair;
 

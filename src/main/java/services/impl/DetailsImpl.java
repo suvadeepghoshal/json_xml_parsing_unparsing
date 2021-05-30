@@ -91,16 +91,30 @@ public class DetailsImpl implements Details {
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             Books books = (Books) unmarshaller.unmarshal(new StringReader(data));
             List<Book> bookList = books.getBooks();
+            Map<String, String> authorXmlMap = new HashMap<>();
             for (int i = 0; i < bookList.size(); ++i) {
-                // DetailsDao detailsDao = new DetailsDaoImpl();
-                // detailsDao.createBooks(bookList.get(i));
+                DetailsDao detailsDao = new DetailsDaoImpl();
+                detailsDao.createBooks(bookList.get(i));
             }
-            for(int i = 0; i < bookList.size(); ++i) {
-                for(int j = 0; j < bookList.get(i).getAuthors().size(); ++j) {
-                    Map<String, String> authorXmlMap = new HashMap<>();
-                    if(!authorXmlMap.containsKey(bookList.get(i).getAuthors().get(j).getId())) {
-                        authorXmlMap.put(bookList.get(i).getAuthors().get(j).getId(), bookList.get(i).getAuthors().get(j).getName());
+            for (int i = 0; i < bookList.size(); ++i) {
+                for (int j = 0; j < bookList.get(i).getAuthors().size(); ++j) {
+                    if (!authorXmlMap.containsKey(bookList.get(i).getAuthors().get(j).getId())) {
+                        authorXmlMap.put(bookList.get(i).getAuthors().get(j).getId(),
+                                bookList.get(i).getAuthors().get(j).getName());
                     }
+                }
+            }
+            for (Map.Entry<String, String> entry : authorXmlMap.entrySet()) {
+                DetailsDao detailsDao = new DetailsDaoImpl();
+                detailsDao.createAuthors(entry.getKey(), entry.getValue());
+            }
+            for (int i = 0; i < bookList.size(); ++i) {
+                for (int j = 0; j < bookList.get(i).getAuthors().size(); ++j) {
+                    Pair<String, String> pair = new Pair<>();
+                    pair.setFirst(bookList.get(i).getAuthors().get(j).getId());
+                    pair.setSecond(bookList.get(i).getBookId());
+                    DetailsDao detailsDao = new DetailsDaoImpl();
+                    detailsDao.mapping(pair);
                 }
             }
         } catch (JAXBException e) {
