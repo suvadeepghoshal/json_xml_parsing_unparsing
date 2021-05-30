@@ -18,7 +18,7 @@ function sendToservlet(data) {
     dataType: "json",
     data: JSON.stringify(data),
     success: function (messege) {
-      console.log(messege);
+      alert("Successfully send to servlet");
     },
   });
 }
