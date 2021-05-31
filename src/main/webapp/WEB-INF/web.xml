@@ -18,4 +18,12 @@
     <servlet-name>getxmldata</servlet-name>
     <url-pattern>/getxmldata</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-class>controller.FromDb</servlet-class>
+    <servlet-name>fromdb</servlet-name>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fromdb</servlet-name>
+    <url-pattern>/fromdb</url-pattern>
+  </servlet-mapping>
 </web-app>

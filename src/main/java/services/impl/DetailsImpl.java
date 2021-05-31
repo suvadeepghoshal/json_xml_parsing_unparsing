@@ -126,4 +126,13 @@ public class DetailsImpl implements Details {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void getDetails() {
+        DetailsDao detailsDao = new DetailsDaoImpl();
+        List<Book> bookList = detailsDao.getGetails();
+        for (Book b : bookList) {
+            System.out.println(b);
+        }
+    }
 }

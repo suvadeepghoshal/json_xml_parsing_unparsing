@@ -41,6 +41,15 @@
                 onclick="script()"
               />
             </p>
+            <input
+                class="btn btn-success"
+                type="button"
+                id="button_to_get_data_from_db"
+                value="Click me to trigger DB"
+                name="button_to_get_data_from_db"
+                onclick="generate()"
+              />
+            </p>
             <p id="get_data"></p>
           </div>
         </div>
@@ -53,5 +62,6 @@
     ></script>
     <script src="js/app.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/generate.js"></script>
   </body>
 </html>
